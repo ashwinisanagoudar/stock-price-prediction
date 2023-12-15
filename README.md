@@ -27,10 +27,8 @@ Overall, each model showcased unique strengths and varying performance levels, w
 The KNeighbors Regressor and Random Forest Regressor exhibited better performance compared to Linear Regression, achieving accuracies exceeding 98% and demonstrating reduced RMSE values, results were observed with following specified hyperparameters.
 ![Stock Price Predection Using Regression](images/regression-result-all.png)
 
-**Time Series (ARIMA)**
-
+**Time Series (ARIMA)**     
 The ARIMA model was evaluated on a test dataset using various evaluation metrics:
-
    - **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.  
    - **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
 
@@ -51,10 +49,8 @@ The ARIMA model was evaluated on a test dataset using various evaluation metrics
 
     The model's performance was notably affected by the chosen parameters. Adjusting these values might improve future predictions.
 
-**LSTM**
-
+**LSTM**       
 The LSTM model was evaluated using following key performance metrics:
-
   - **RMSE (Root Mean Squared Error):** The LSTM model achieved an RMSE of 176.59, signifying the average difference between predicted and actual stock prices.
   - **MAE (Mean Absolute Error):** With an MAE of 176.44, the model showcased the absolute average difference between forecasted and observed stock prices.
 
@@ -214,7 +210,7 @@ Random Forest Regressor demonstrated superior predictive abilities, achieving sc
 **Regression Summary**
 ![image](images/regression-result-all.png)
 
-**Time Series (ARIMA)**
+**Time Series (ARIMA):**
 The ARIMA model was trained on the across various parameter combinations (p, d, q) to identify the optimal order, aiming for minimized RMSE. Its performance was assessed on a separate test dataset, using evaluation metrics like RMSE and MAE. The ARIMA model achieved an RMSE of 2.13 and an MAE of 1.57, demonstrating its effectiveness with an order of (4, 2, 4).
 
 **LSTM:**
@@ -224,6 +220,6 @@ A detailed interpretation and evaluation of the best model can be found in the r
 
 # Link to notebook :
 
-https://github.com/ashwinisanagoudar/stock-price-prediction
+https://github.com/ashwinisanagoudar/stock-price-prediction/blob/main/stock-prediction.ipynb
 
 
