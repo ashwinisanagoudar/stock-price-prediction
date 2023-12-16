@@ -1,4 +1,4 @@
-# stock-price-prediction
+# Stock Price Prediction
 
 ## Executive summary
 
@@ -29,18 +29,18 @@ The KNeighbors Regressor and Random Forest Regressor exhibited better performanc
 
 **Time Series (ARIMA)**     
 The ARIMA model was evaluated on a test dataset using various evaluation metrics:
-   - **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.  
-   - **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
+   * **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.     
+   * **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
 
    ![Stock Price Predection Using ARIMA](images/arima-summary.png)
 
-    **Forecast Visualization**
+   * **Forecast Visualization**
 
-    The model's predictions were visualized against the actual values:
+   The model's predictions were visualized against the actual values:   
 
    ![Stock Price Predection Using ARIMA](images/arima-result.png)
 
-  **Parameter Performance**
+  * **Parameter Performance**
 
     Parameters (p, d, q) used in the ARIMA model:
     - p (AR parameter): 4
@@ -56,7 +56,7 @@ The LSTM model was evaluated using following key performance metrics:
 
   ![Stock Price Predection Using LSTM](images/lstm-summary.png)
 
-  **Forecast Visualization**
+  * **Forecast Visualization**
 
   The model's predictions were visualized against the actual stock prices:
 
@@ -90,13 +90,13 @@ In this case study, a diverse set of predictive models was constructed, encompas
 
 ## Exploratory data analysis:
 
-**Data Source**
+**Data Source**       
 We will be sourcing data from Yahoo Finance using yfinance library which offers easy way to download the market data.
 
     
 **Data Overview**
-* **Explore the data**
-        By reviewing the content of the data, we can see that the data is numeric and the date is the index of the data and it has following features.
+* **Explore the data**      
+    By reviewing the content of the data, we can see that the data is numeric and the date is the index of the data and it has following features.
 
         Date - Date      
         Open - Price from the first transaction of a trading day      
@@ -117,6 +117,7 @@ There are no null and duplicate values in this data. Below is the summary statis
 The close price refers to the final price at which a particular stock is traded on a given trading day. It's the last price recorded when the stock market closes for the day. A stock’s closing price is the standard benchmark used by investors, analysts and traders to track its performance over time.
 
 The 'Adjusted Close Price' (or 'Adj Close') of a stock reflects the final price of a security after adjustments have been made for factors like dividends, stock splits, or other corporate actions that could impact the stock price. We will be using adjusted close price for analysis as this will account these additional variables that could otherwise skew the historical data.
+
 ![image](images/closeprice.png)
 ![image](images/closeprice-all.png)
 
@@ -146,12 +147,14 @@ The "high" refers to the peak price level reached by a stock within the trading 
 The volume of a stock refers to the total number of shares that have been traded over a specific period, typically within a day. It represents the level of activity or the amount of buying and selling of a particular stock within a given timeframe.
 
 Traders often use volume indicators alongside price data to make more informed decisions about buying or selling a stock. Understanding the dynamics of volume can provide valuable insights into market sentiment and potential future price movements.
+
 ![image](images/volume.png)
 
 **5. Find the moving average of each stock**       
 The moving average (MA) a calculation that helps reduce noise in price data by creating a single, smoothed line that helps analysts and traders identify potential price trends over a specified period. A moving average is calculated by averaging a set of past data points within a specific time frame, creating a line that moves along with the stock's price movements.
 
 Traders often use moving averages to identify potential buy or sell signals. For instance, when the stock price crosses above the moving average line, it might indicate a bullish trend, while a crossing below could suggest a bearish trend.
+
 ![image](images/moving-avg.png)
 
 **6. Daily Return of the Stock**       
@@ -162,12 +165,14 @@ The daily return of a stock refers to the percentage change in its price from on
 Large daily returns indicate higher volatility, suggesting that the stock's price is fluctuating significantly within short periods, higher daily volatility potentially indicating higher risk.
 
 Investors and analysts often compare the daily returns of different stocks or the same stock against a benchmark (like an index) to gauge relative performance.
+
 ![image](images/daily-returns.png)
 Now let's get an overall look at the average daily return using a histogram. We will use seaborn to create both a histogram and kde plot on the same figure.
 ![image](images/daily-return-hist.png)
 
 **7. Correlation between different stocks**      
 We can compare the correlation between the stocks to explore the relationships between various financial instruments, economic indicators, or any other relevant factors that could impact stock prices. It can be done using the seaborn pairplot and correlation heatmap.
+
 ![image](images/pairplot.png)
 Above we can see the correlation between all tech stocks, it appears that AAPL and MSFT, GOOGL and MSFT are strongly coorelated from their daily returns. We can also verify and compare the correlation between the stocks using correlation matrix.
 ![image](images/heatmap.png)
@@ -180,6 +185,7 @@ Risk and return in stocks is fundamental to investment analysis, it's a trade-of
 * Risk: Represents the uncertainty or volatility associated with an investment.
 
 The risk-return trade-off suggests that higher potential returns usually come with higher levels of risk. Risk vs return of the stock is commonly calculated using stock's historical returns and standard deviation to measure volatility, higher standard deviation indicates greater variability in returns, implying higher risk.
+
 ![image](images/risk-return.png)
 **Comparison of daily returns between stocks**
 ![image](images/daily-return-comparison.png)
@@ -191,32 +197,32 @@ In this stock prediction scenario, a variety of models were utilized, including 
 
 ##### Prepare Datasets for Model :
 
-* Creating train and test datasets after the data scaling and feature selection.         
-* Creating dataframe that store the performance of each model for the final review and selection.
-* Creating functions for the following :
+* Create train and test datasets after the data scaling and feature selection.         
+* Create dataframe that store the performance of each model for the final review and selection.
+* Create functions for the following :
     - get dataset for given stock ticker
     - create training and test data for the given stock ticker
     - train the model and process result of the model
 
-**Linear Regression:**
+**Linear Regression:**     
 The linear regression model served as baseline model, exhibited average performance, showcasing a relatively higher root mean squared error compared to other regression models. Across different stocks, its RMSE varied from 12 to 32, with an average score.
 
-**KNeighbors Regressor:**
+**KNeighbors Regressor:**      
 KNeighbors demonstrated superior predictive abilities, achieving scores exceeding 98% and maintaining minimal root mean squared errors ranging between 2 and 5 across various stocks. These outcomes were observed with hyperparameters {'n_neighbors': 5, 'p': 1, 'weights': 'distance'} identified through grid search.
 
-**Random Forest Regressor:**
+**Random Forest Regressor:**        
 Random Forest Regressor demonstrated superior predictive abilities, achieving scores exceeding 98% and maintaining minimal root mean squared errors ranging between 2 and 5 across various stocks. These outcomes were observed with hyperparameters {'max_depth': 20, 'min_samples_leaf': 1, 'min_samples_split': 2, 'n_estimators': 100} identified through grid search.  However, it's worth noting that the training time for the Random Forest model was relatively high.
 
 **Regression Summary**
 ![image](images/regression-result-all.png)
 
-**Time Series (ARIMA):**
+**Time Series (ARIMA):**      
 The ARIMA model was trained on the across various parameter combinations (p, d, q) to identify the optimal order, aiming for minimized RMSE. Its performance was assessed on a separate test dataset, using evaluation metrics like RMSE and MAE. The ARIMA model achieved an RMSE of 2.13 and an MAE of 1.57, demonstrating its effectiveness with an order of (4, 2, 4).
 
-**LSTM:**
+**LSTM:**      
 The LSTM model was constructed with a sequence comprising LSTM units of 128 and 64, alongside Dense layers of 25 and 1. Its performance was evaluated on an independent test dataset, employing metrics such as RMSE and MAE. The LSTM model obtained an RMSE of 176.59 and an MAE of 176.44. While showcasing potential in capturing long-term dependencies, it revealed the need for further optimization to enhance its generalization and reduce prediction errors.
 
-A detailed interpretation and evaluation of the best model can be found in the results and conclusion section of the executive summary above. 
+**A detailed interpretation and evaluation of the best model can be found in the results and conclusion section of the executive summary above.**
 
 # Link to notebook :
 
