@@ -27,10 +27,11 @@ Overall, each model showcased unique strengths and varying performance levels, w
 The KNeighbors Regressor and Random Forest Regressor exhibited better performance compared to Linear Regression, achieving accuracies exceeding 98% and demonstrating reduced RMSE values, results were observed with following specified hyperparameters.
 ![Stock Price Predection Using Regression](images/regression-result-all.png)
 
-**Time Series (ARIMA)**     
+**Time Series (ARIMA)**  
+
 The ARIMA model was evaluated on a test dataset using various evaluation metrics:
-   * **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.     
-   * **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
+* **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.
+* **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
 
    ![Stock Price Predection Using ARIMA](images/arima-summary.png)
 
@@ -46,7 +47,6 @@ The ARIMA model was evaluated on a test dataset using various evaluation metrics
     - p (AR parameter): 4
     - d (Differencing): 2
     - q (MA parameter): 4
-
     The model's performance was notably affected by the chosen parameters. Adjusting these values might improve future predictions.
 
 **LSTM**       
@@ -63,7 +63,7 @@ The LSTM model was evaluated using following key performance metrics:
   ![Stock Price Predection Using LSTM](images/lstm-result.png)
 
   
-**Conclusion**   
+## Conclusion
 In this case study, a diverse set of predictive models was constructed, encompassing linear regression, KNeighbors Regressor, Random Forest, ARIMA, and LSTM, aimed at forecasting stock prices. Each model offered distinct strengths and demonstrated varying degrees of performance in capturing the complexities of stock market dynamics.
 
    **Model Performance :**
