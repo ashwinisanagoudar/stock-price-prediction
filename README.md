@@ -47,7 +47,7 @@ The ARIMA model was evaluated on a test dataset using various evaluation metrics
     - p (AR parameter): 4
     - d (Differencing): 2
     - q (MA parameter): 4    
-    The model's performance was notably affected by the chosen parameters. Adjusting these values might improve future predictions.
+The model's performance was notably affected by the chosen parameters. Adjusting these values might improve future predictions.
 
 **LSTM**       
 The LSTM model was evaluated using following key performance metrics:
