@@ -28,10 +28,10 @@ The KNeighbors Regressor and Random Forest Regressor exhibited better performanc
 ![Stock Price Predection Using Regression](images/regression-result-all.png)
 
 **Time Series (ARIMA)**  
-
+   
 The ARIMA model was evaluated on a test dataset using various evaluation metrics:
-* **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.
-* **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
+   * **RMSE (Root Mean Squared Error):** The ARIMA model achieved an RMSE of 2.13, indicating the average difference between predicted and actual values.     
+   * **MAE (Mean Absolute Error):** With an MAE of 1.57, the ARIMA model showcased the absolute average difference between forecasted and observed values.
 
    ![Stock Price Predection Using ARIMA](images/arima-summary.png)
 
@@ -46,7 +46,7 @@ The ARIMA model was evaluated on a test dataset using various evaluation metrics
     Parameters (p, d, q) used in the ARIMA model:
     - p (AR parameter): 4
     - d (Differencing): 2
-    - q (MA parameter): 4
+    - q (MA parameter): 4    
     The model's performance was notably affected by the chosen parameters. Adjusting these values might improve future predictions.
 
 **LSTM**       
